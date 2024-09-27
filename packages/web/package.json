@@ -19,7 +19,7 @@
 		"build:copy-types": "npx babel-node ./scripts/copy-types.js",
 		"build:umd": "cross-env BABEL_ENV=commonjs webpack --progress --mode=production --config webpack.config.umd.js",
 		"stats": "NODE_OPTIONS=--openssl-legacy-provider webpack --progress --mode=production --config webpack.config.umd.js --json > stats.json",
-		"version-upgrade": "nps upgrade -c ../../package-scripts.js",
+		"version-upgrade": "NODE_OPTIONS=--openssl-legacy-provider nps upgrade -c ../../package-scripts.js",
 		"prepublishOnly": "yarn run build",
 		"postpublish": "yarn run version-upgrade",
 		"test": "jest",
